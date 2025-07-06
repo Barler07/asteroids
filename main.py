@@ -29,6 +29,10 @@ def main():
                 return
 
         updatable.update(dt)
+        for obj in asteroids:
+            if obj.collision(player) == False:
+                print("Game over!")
+                raise SystemExit
         screen.fill("black")
         for obj in drawable:
             obj.draw(screen)
